@@ -6,7 +6,7 @@ import RestaurantDetailPage from './routes/RestaurantDetailPage';
 import UpdatePage from './routes/UpdatePage';
 
 const App = () => {
-  return <div className="App">
+  return <div className="container">
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<Home />} />
