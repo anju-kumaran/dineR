@@ -21,6 +21,17 @@ const UpdateRestaurant = (props) => {
     
   }, [])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const updatedRestaurant = await RestaurantFinder.put(`/${id}`, {
+      name,
+      location,
+      price_range: priceRange
+    });
+    console.log(updatedRestaurant);
+  };
+  
+
   return (
     <div>
       <form action=''>
@@ -39,7 +50,7 @@ const UpdateRestaurant = (props) => {
           <input value={priceRange} onChange={e => setPriceRange(e.target.value)} id='price_range' className='form-control' type='number' />
         </div>
 
-        <button className='btn btn-primary'>Submit</button>
+        <button type='submit' onClick={handleSubmit} className='btn btn-primary'>Submit</button>
       </form>
     </div>
   );
