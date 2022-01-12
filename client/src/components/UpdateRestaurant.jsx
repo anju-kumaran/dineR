@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import RestaurantFinder from '../apis/RestaurantFinder';
+import { useNavigate } from "react-router-dom";
 
 const UpdateRestaurant = (props) => {
   const {id} = useParams();
+  const navigate = useNavigate();
  
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -29,6 +31,7 @@ const UpdateRestaurant = (props) => {
       price_range: priceRange
     });
     console.log(updatedRestaurant);
+    navigate('/');
   };
   
 
