@@ -15,7 +15,7 @@ const RestaurantDetailPage = () => {
       try {
         const response = await RestaurantFinder.get(`/${id}`);
         console.log(response);
-        setSelectedRestaurant(response.data.data.restaurant);  
+        setSelectedRestaurant(response.data.data);  
       } catch (error) {
         console.log(error);
       }
@@ -26,11 +26,11 @@ const RestaurantDetailPage = () => {
 
   return (
     <div>
-      {selectedRestaurant && selectedRestaurant.name}
       {selectedRestaurant && (
         <>
+        <h1 className='text-center display-1'>{selectedRestaurant.restaurant.name}</h1>
         <div className="mt-3">
-          <Reviews/>
+          <Reviews reviews={selectedRestaurant.reviews}/>
         </div>
         <AddReviews/>
         </>
