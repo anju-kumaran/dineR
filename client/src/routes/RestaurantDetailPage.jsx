@@ -4,6 +4,7 @@ import { RestaurantsContext } from '../context/RestaurantsContext';
 import { useParams } from 'react-router-dom';
 import StarRating from '../components/StarRating';
 import Reviews from '../components/Reviews';
+import AddReviews from '../components/AddReviews';
 
 const RestaurantDetailPage = () => {
   const {id} = useParams();
@@ -31,6 +32,7 @@ const RestaurantDetailPage = () => {
         <div className="mt-3">
           <Reviews/>
         </div>
+        <AddReviews/>
         </>
 
       )}
