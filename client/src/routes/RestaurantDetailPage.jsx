@@ -23,7 +23,7 @@ const RestaurantDetailPage = () => {
 
   return (
     <div>
-      {selectedRestaurant.name}
+      {selectedRestaurant && selectedRestaurant.name}
     </div>
   )
 }
